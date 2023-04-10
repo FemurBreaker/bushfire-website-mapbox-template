@@ -34,6 +34,12 @@
       type="image/png"
       href="/favicon_package_v0.16/favicon-32x32.png"
     />
+    <!-- Mapbox -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.js"></script>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.13.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <!-- Navbar/just for logo lol idk why the fuck im even making this -->
@@ -60,7 +66,11 @@
                 >Environmental Impacts</a
               >
             </li>
-            <li><a href="#" class="navbar--shortcuts--cut">Dynamic Map</a></li>
+            <li>
+              <a href="#mapbox--container" class="navbar--shortcuts--cut"
+                >Dynamic Map</a
+              >
+            </li>
           </ul>
         </div>
       </nav>
@@ -300,22 +310,81 @@
         </button>
         <ul data-slides>
           <li class="slide" data-active>
-            <img src="/images/image1.jpg" alt="Nature Image #1" />
+            <img src="/images/image1.jpg" alt="Bushfire Image #1" />
           </li>
           <li class="slide">
-            <img src="/images/image2.jpg" alt="Nature Image #2" />
+            <img src="/images/image2.jpg" alt="Bushfire Image #2" />
           </li>
           <li class="slide">
-            <img src="/images/image3.jpg" alt="Nature Image #3" />
+            <img src="/images/image3.jpg" alt="Bushfire Image #3" />
           </li>
           <li class="slide">
-            <img src="/images/image4.jpg" alt="Nature Image #3" />
+            <img src="/images/image4.jpg" alt="Bushfire Image #4" />
           </li>
           <li class="slide">
-            <img src="/images/image5.jpeg" alt="Nature Image #3" />
+            <img src="/images/image5.jpeg" alt="Bushfire Image #5" />
           </li>
         </ul>
       </div>
     </section>
+    <!-- Mapbox Map -->
+    <div class="mapbox--container" id="mapbox--container">
+      <div class="mapbox--logo">
+        <img src="/images/mapbox-logo-white.svg" alt="Mapbox logo" />
+      </div>
+      <div class="mapbox--text">
+        <h2>Dynamic Map</h2>
+        <h3>Powered by Mapbox©</h3>
+        <p>
+          Users can collect, store, manipulate, analyse, and display spatially
+          referenced data using a GIS, or geographic information system. One
+          example of GIS software that enables users to design unique maps, add
+          layers and data, and view data in real-time is Mapbox. GIS technology
+          was extensively used to track the spread of the fires, comprehend
+          their impact, and organise response operations during the 2019–2020
+          Australian bushfires. Interactive maps that displayed the scope and
+          intensity of the fires as well as the regions most at risk were made,
+          specifically using Mapbox.
+        </p>
+        <p>
+          Data visualisation in a spatial context is one of the main advantages
+          of using a GIS like Mapbox. For instance, GIS software was employed to
+          overlay fire data with other spatial data, such as population density,
+          topography, and weather patterns, during the bushfires. Researchers
+          and first responders were able to use this information to better
+          understand how the fires affected the ecosystem and nearby
+          populations. GIS technology was utilised to track the spread of the
+          fires in real-time in addition to visualising data. GIS analysts were
+          able to produce precise and current maps of the fires' movements using
+          satellite images and other geospatial data, which helped emergency
+          responders more effectively distribute resources and decide where to
+          concentrate their efforts.
+        </p>
+      </div>
+      <div class="map--wrapper">
+        <div
+          id="map"
+          style="
+            width: 1600px;
+            height: 800px;
+            border-radius: 15px;
+            border: 10px solid #ffffff;
+            object-fit: cover;
+          "
+        ></div>
+      </div>
+      <script>
+        mapboxgl.accessToken =
+          "pk.eyJ1IjoiZmVtdXJicmVha2VyIiwiYSI6ImNsZzVtcWp6dDAybTEzZWxxaml2Ym1pOHQifQ.ZzbDSSlBv5_tyGHKoZvfHw";
+        const map = new mapboxgl.Map({
+          container: "map", // container ID
+          // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+          style: "mapbox://styles/mapbox/dark-v10", // style URL
+          center: [135.74707, -26.647459], // starting position [lng, lat]
+          zoom: 4.5, // starting zoom
+          projection: "globe",
+        });
+      </script>
+    </div>
   </body>
 </html>

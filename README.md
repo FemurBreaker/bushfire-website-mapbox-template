@@ -1,2 +1,3 @@
 # bushfire-website-mapbox-template
+
 A website using the Mapbox GIS to create a dynamic map that uses public data in the form of GeoJSON, GeoTIFF, and more to showcase the 2019-2020 bushfire season. Additionally, the website also provides information about the socioeconomic and environmental impacts of these bushfires...
