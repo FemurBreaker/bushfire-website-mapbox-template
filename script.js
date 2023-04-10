@@ -48,3 +48,12 @@ $(document).ready(function () {
   });
 });
 
+//Connecting Links
+const myButton = document.querySelector('.main__btn');
+const myLink = document.querySelector('.main__link');
+myLink.setAttribute('target', '_blank');
+
+myButton.addEventListener('click', () => {
+  window.open( myLink.href, '_blank');
+});
+
