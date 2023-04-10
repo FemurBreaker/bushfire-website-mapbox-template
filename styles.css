@@ -307,7 +307,7 @@ li:hover {
 .socioeconomic-impact {
     width: 100%;
     height: auto;
-    background-color: #E53935;
+    background-color: #e2725b;
     flex-flow: column;
     justify-content: center;
     align-items: center;
@@ -371,9 +371,9 @@ li:hover {
     flex-wrap: wrap;
     width: 100%;
     height: auto;
-    background-color: #2E7D32;
-    border: 30px solid #E53935;
-    border-bottom: #2E7D32;
+    background-color: #3f826d;
+    border: 30px solid #e2725b;
+    border-bottom: #3f826d;
 }
 
 .e-impacts--text {
