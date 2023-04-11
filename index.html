@@ -68,7 +68,7 @@
             </li>
             <li>
               <a href="#mapbox--container" class="navbar--shortcuts--cut"
-                >Dynamic Map</a
+                >Visual Map</a
               >
             </li>
           </ul>
@@ -334,7 +334,7 @@
         <img src="images/mapbox-logo-white.svg" alt="Mapbox logo" />
       </div>
       <div class="mapbox--text">
-        <h2>Dynamic Map</h2>
+        <h2>Visual Map</h2>
         <h3>Powered by Mapbox©</h3>
         <p>
           Users can collect, store, manipulate, analyse, and display spatially
@@ -361,6 +361,13 @@
           responders more effectively distribute resources and decide where to
           concentrate their efforts.
         </p>
+        <p>
+          This is why our website allows you to visualise the data, to truly see
+          how much damage the bushfires have caused in Australia. The heatmaps
+          below are using Mapbox to visualise bushfire data during the peak of
+          the 2019-2020 bushfires in Australia. Each red stain repersents a fire
+          in the area; the fire almost covers the whole country...
+        </p>
       </div>
       <div class="map--wrapper">
         <div
@@ -380,9 +387,18 @@
         const map = new mapboxgl.Map({
           container: "map", // container ID
           // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
-          style: "mapbox://styles/mapbox/dark-v10", // style URL
+          style: "mapbox://styles/femurbreaker/clgcrow9a006s01nuc5axcc9s", // style URL
           center: [135.74707, -26.647459], // starting position [lng, lat]
-          zoom: 4.5, // starting zoom
+          zoom: 5, // starting zoom
+          logoPosition: "top-right",
+          minZoom: 4.3,
+        });
+
+        map.on("load", () => {
+          map.setFog({});
+          map.addControl(
+            new mapboxgl.ScaleControl({ position: "bottom-right" })
+          );
         });
       </script>
     </div>
