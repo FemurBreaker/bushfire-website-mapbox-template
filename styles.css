@@ -514,7 +514,7 @@ li:hover {
 
 .mapbox--container {
     width: 100%;
-    height: 100vh;
+    height: auto;
     background-color: #788AFF;
 }
 
@@ -556,6 +556,7 @@ li:hover {
     max-width: 98%;
     margin: 1rem 2rem 1.5rem 40%;
     font-size: 1.5rem;
+    background-color: #788AFF;
 }
 
 .map--wrapper {
